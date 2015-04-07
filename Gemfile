@@ -1,40 +1,65 @@
 source 'https://rubygems.org'
+ruby '2.1.5'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
+gem 'rails',                  '4.1.8'
+gem 'sass-rails'
+gem 'uglifier',               '2.5.3'
+gem 'coffee-rails',           '4.1.0'
+gem 'jquery-rails',           '3.1.2'
+gem 'turbolinks',             '2.5.2'
+gem 'jbuilder',               '2.2.5'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'mysql2'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem "devise"
+gem "foreigner"
+gem "brazilian-rails"
+gem "friendly_id"
+gem "httparty"
+gem "sitemap_generator"
+gem "date_validator"
+gem "paperclip"
+gem "foreman"
+gem "cancancan"
+gem "baseinocode-rails", git: "git@bitbucket.org:inocode/baseinocode-rails.git"
+gem 'simple_form',            '3.1.0'
+gem 'missing_validators'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :assets do
+  gem "compass-rails"
+  gem "kaminari-bootstrap"
+  gem "dropzonejs-rails"
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :production, :staging do
+  gem 'newrelic_rpm',         '3.9.7.266'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development do
+  gem 'spring',               '1.2.0'
+  gem 'letter_opener',        '1.2.0'
+  gem 'bullet',               '4.14.0'
+  gem 'quiet_assets',         '1.0.3'
+end
 
+group :test do
+  gem 'shoulda-matchers',     '2.7.0', require: false
+  gem 'simplecov',            '0.9.1', require: false
+  gem 'email_spec',           '1.6.0'
+  gem 'capybara',             '2.4.4'
+  gem 'poltergeist',          '1.5.1'
+  gem 'vcr',                  '2.9.3'
+  gem 'webmock',              '1.20.4'
+  gem 'database_cleaner',     '1.3.0'
+  gem "rubycritic",                    require: false, github: "whitesmith/rubycritic"
+end
+
+group :development, :test do
+  gem 'rspec-rails',          '3.1.0'
+  gem 'factory_girl_rails',   '4.5.0'
+  gem 'pry-rails',            '0.3.2'
+  gem 'dotenv-rails',         '1.0.2'
+  gem 'awesome_print',        '1.2.0'
+  gem "brfaker"
+end

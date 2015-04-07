@@ -51,7 +51,7 @@ group :test do
   gem 'vcr',                  '2.9.3'
   gem 'webmock',              '1.20.4'
   gem 'database_cleaner',     '1.3.0'
-  gem "rubycritic",                    require: false, git: "https://github.com/whitesmith/rubycritic.git"
+  gem "rubycritic",           '1.4.0', require: false
 end
 
 group :development, :test do

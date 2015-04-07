@@ -25,6 +25,8 @@ gem "baseinocode-rails", git: "git@bitbucket.org:inocode/baseinocode-rails.git"
 gem 'simple_form',            '3.1.0'
 gem 'missing_validators'
 
+gem 'bootstrap-sass', '~> 3.3.4.1'
+
 group :assets do
   gem "compass-rails"
   gem "kaminari-bootstrap"

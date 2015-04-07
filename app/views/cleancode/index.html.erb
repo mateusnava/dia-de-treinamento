@@ -1,0 +1,90 @@
+<section class="apresentacao">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+        <br />
+        <h1 class="tema">Clean Code</h1>
+        <h3>Escrevendo código para seres humanos</h3>
+        <br /><br />
+        <div class="row">
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1">
+            <%=image_tag "rodrigo_rosa.jpg", title: "Rodrigo Rosa", alt: "Rodrigo Rosa", class: "img-responsive img-circle" %>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+            <br />
+            <p>Palestra com:</p>
+            <h4>Rodrigo Rosa <small>(<a href="https://twitter.com/rodrigorosa" target="_blank">@rodrigorosa</a>)</small></h4>
+            <p>Computer scientist, software developer, guitar apprentice and soccer n' music addicted!</p>
+          </div>
+        </div>
+
+        <br />
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+        <br /><br />
+        <%=image_tag "clean_code.png", title: "Clean Code", alt: "Clean Code", class: "img-responsive img-clean-code" %>    
+      </div>
+    </div>
+  </div>
+</section>
+<section class="infos">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <i class="glyphicon glyphicon-map-marker"></i> <span>FAE - Erechim</span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <i class="glyphicon glyphicon-calendar"></i> <span>11 de abril de 2015</span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <i class="glyphicon glyphicon-time"></i> <span>09h00</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="inscricao">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1">
+        <h3>O que é o Dia de Treinamento?</h3>
+        <p>O Dia de Treinamento é um evento aberto ao público, voltado para a comunidade de desenvolvedores de softwares, do mais experiente profissional ao aspirante desenvolvedor.</p>
+        <p>Tem como característica ser um EVENTO GRATUITO, apoiado por empresas e instituições de ensino da região que incentivam o aprendizado na área de T.I.</p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-1">
+        <h3>Como participar?</h3>
+        <h4>Simples, inscreva-se e compareça no dia do evento!</h4>
+        <%= form_tag inscricao_cadastrar_path, remote: true, method: :post do %>
+          <div class="form-group">
+            <label for="nome">Evento</label>
+            <%= text_field_tag "inscricao[evento]", "Clean Code, com Rodrigo Rosa", class: "form-control", disabled: true %>
+          </div>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <%= text_field_tag "inscricao[nome]", nil, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="nome">Email</label>
+            <%= email_field_tag "inscricao[email]", nil, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= button_tag "Cadastrar", class: "form-control btn-success" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="organizadores">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-md-offset-1">
+        <h5>Apoio:</h5>
+        <%=image_tag "logo-fae.png", title: "Clean Code", alt: "Clean Code", class: "img-responsive logo" %>    
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <h5>Patrocínio:</h5>
+        <%=image_tag "inocode.png", title: "Clean Code", alt: "Clean Code", class: "img-responsive logo" %>     <%=image_tag "wonder.png", title: "Clean Code", alt: "Clean Code", class: "img-responsive logo", style: "width: 220px" %>    
+      </div>
+    </div>
+  </div>
+</section>

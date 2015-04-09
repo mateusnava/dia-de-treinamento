@@ -26,15 +26,12 @@ gem 'simple_form',            '3.1.0'
 gem 'missing_validators'
 
 gem 'bootstrap-sass', '~> 3.3.4.1'
+gem "puma", "~> 2.11"
 
 group :assets do
   gem "compass-rails"
   gem "kaminari-bootstrap"
   gem "dropzonejs-rails"
-end
-
-group :production, :staging do
-  gem 'newrelic_rpm',         '3.9.7.266'
 end
 
 group :development do

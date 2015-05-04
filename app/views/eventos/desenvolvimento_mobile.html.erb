@@ -1,0 +1,143 @@
+<section class="apresentacao">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+        <br />
+        <h1 class="tema">Desenvolvimento Mobile</h1>
+        <h3>Iniciando com aplicativos híbridos</h3>
+        <br /><br />
+        <div class="row">
+          <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3 col-xs-offset-1">
+            <%=image_tag "palestrantes/henrique_rotava.jpg", title: "Henrique Rotava", alt: "Henrique Rotava", class: "img-responsive img-circle" %>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+            <br />
+            <h4>Henrique Rotava</h4>
+            <p>Cientista da Computação, desenvolvedor de softwares na empresa Compasso.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3 col-xs-offset-1">
+            <%=image_tag "palestrantes/mateus_nava.jpg", title: "Mateus Nava", alt: "Mateus Nava", class: "img-responsive img-circle" %>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+            <br />
+            <h4>Mateus Nava <small>(<a href="https://twitter.com/matenava" target="_blank">@matenava</a>)</small></h4>
+            <p>Cientista da Computação, desenvolvedor de softwares na empresa Inocode.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3 col-xs-offset-1">
+            <%=image_tag "palestrantes/rodrigo_rosa.jpg", title: "Rodrigo Rosa", alt: "Rodrigo Rosa", class: "img-responsive img-circle" %>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+            <br />
+            <h4>Rodrigo Rosa <small>(<a href="https://twitter.com/rodrigorosa" target="_blank">@rodrigorosa</a>)</small></h4>
+            <p>Cientista da Computação, desenvolvedor de softwares na empresa Wonder Sistemas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+        <div class="row">
+          <div class="col-xs-12">
+            <br />
+            <%=image_tag "desenvolvimento-mobile/ionic.png", title: "Ionic", alt: "Ionic", class: "img-responsive" %>    
+            <br /><br />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h4>Parte 1: Introdução ao desenvolvimento híbrido.</h4>
+            <p>Palestra sobre conceitos e tecnologias utilizadas para desenvolvimento de aplicativos híbridos.</p>
+            <p>Conhecimentos desejáveis:</p>
+            <ul>
+              <li>HTML5</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h4>Parte 2: Desenvolvendo um aplicativo na prática.</h4>
+            <p>Desenvolvimento de um aplicativo de funções básicas e de fácil implementação.</p>
+            <br>
+            <p>Quer acompanhar o desenvolvimento?</p>
+            <p>Leve o seu computador pessoal!</p>
+            <p>O aplicativo será desenvolvido utilizando Ubuntu como sistema operacional.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="infos">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <i class="glyphicon glyphicon-map-marker"></i> <span>URI - Campus Erechim</span><br /><small>Afiteatro - Campus I</small>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <i class="glyphicon glyphicon-calendar"></i> <span>09 de maio de 2015</span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <i class="glyphicon glyphicon-time"></i> <span>09h00</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="inscricao">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1">
+        <h3>O que é o Dia de Treinamento?</h3>
+        <p>O Dia de Treinamento é um evento aberto ao público, voltado para a comunidade de desenvolvedores de softwares, do mais experiente profissional ao aspirante desenvolvedor.</p>
+        <p>Tem como característica ser um EVENTO GRATUITO, apoiado por empresas e instituições de ensino da região que incentivam o aprendizado na área de T.I.</p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-1">
+        <h3>Como participar?</h3>
+        <h4>Simples, inscreva-se e compareça no dia do evento!</h4>
+        <%= form_tag inscricao_cadastrar_path, remote: true, method: :post, id: "inscricao-form" do %>
+          <div class="form-group">
+            <label for="nome">Evento</label>
+            <%= text_field_tag "inscricao[evento]", "Desenvolvimento Mobile: Iniciando com aplicativos híbridos", class: "form-control", disabled: true %>
+          </div>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <%= text_field_tag "inscricao[nome]", nil, class: "form-control", required: true %>
+          </div>
+          <div class="form-group">
+            <label for="nome">Email</label>
+            <%= email_field_tag "inscricao[email]", nil, class: "form-control", required: true %>
+          </div>
+          <div class="form-group">
+            <%= button_tag "Cadastrar", class: "form-control btn-success" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="organizadores">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-md-offset-1">
+        <h5>Apoio:</h5>
+        <a href="http://www.faers.com.br/" target="_blank">
+          <%=image_tag "logo-fae.png", title: "FAE", alt: "FAE", class: "img-responsive logo" %>
+        </a>
+        <a href="http://www.uricer.edu.br/" target="_blank">
+          <%=image_tag "uri-erechim.jpg", title: "URI - Campus Erechim", alt: "URI - Campus Erechim", class: "img-responsive logo", style: "width: 180px" %>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <h5>Promovido por:</h5>
+        <a href="http://www.inocode.com.br/" target="_blank">
+          <%=image_tag "inocode.png", title: "Inocode - Soluções em outsourcing", alt: "Inocode - Soluções em outsourcing", class: "img-responsive logo", style: "width: 180px" %>
+        </a>
+        <a href="http://www.wonder.com.br/" target="_blank">
+          <%=image_tag "wonder.png", title: "Wonder Sistemas", alt: "Wonder Sistemas", class: "img-responsive logo", style: "width: 220px" %>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

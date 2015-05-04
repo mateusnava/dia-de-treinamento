@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   post 'inscricao/cadastrar'
 
-  root "cleancode#index"
+  root "eventos#desenvolvimento_mobile"
+
+  resources "eventos", only: [] do
+    get "cleancode", on: :collection
+    get "desenvolvimento_mobile", on: :collection
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

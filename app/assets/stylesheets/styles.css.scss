@@ -6,40 +6,38 @@ html, body {
 .img-responsive {
   display: inline !important;
 }
+
 .navbar {
   margin-bottom: 0px !important;
-}
 
-/* CLEAN CODE */
-.cleancode {
-  .apresentacao {
-    background: image-url("pattern.jpg");
-    font-family: 'Gloria Hallelujah', cursive;
-    padding: 0 0 40px 0;
-    box-shadow: #000 0px 1px 5px;
-    position: relative;
-    z-index: 1;
-
-    .tema {
-      font-size: 80px;
-      color: #4ba8dc;
-    }
-
-    .img-clean-code {
-      width: 80%;
-    }
-
+  .label-evento {
+    margin: 17px 0 0 5px;
+    color: #666;
   }
 
-  .infos {
-    background: #d24a2c;
-    color: #EEE;
-    font-family: "Arial";
-    font-size: 28px;
-    padding: 20px 0px;
+  .navbar-nav {
+    li:last-child {
+      padding-right: 5px;
+    }
   }
 
 }
+
+.apresentacao {
+  padding: 0 0 40px 0;
+  box-shadow: #000 0px 1px 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.infos {
+  background: #d24a2c;
+  color: #EEE;
+  font-family: "Arial";
+  font-size: 28px;
+  padding: 20px 0px;
+}
+
 .inscricao {
   background: #333;
   padding: 30px 0;
@@ -61,5 +59,42 @@ footer {
   background: #222;
   color: #FFF;
   padding: 10px 0;
+}
+
+
+.cleancode {
+  .apresentacao {
+    background: image-url("pattern.jpg");
+    font-family: 'Gloria Hallelujah', cursive;
+
+    .tema {
+      font-size: 80px;
+      color: #4ba8dc;
+    }
+
+    .img-clean-code {
+      width: 80%;
+    }
+
+  }
+
+  .infos {
+    background: #d24a2c;  
+  }
+
+}
+
+.desenvolvimento_mobile {
+
+  .apresentacao {
+    background: #337ae4;
+    color: #FFF;
+    font-family: 'Nunito', sans-serif;
+
+    a, small {
+      color: #FFF;
+    }
+
+  }
 }
 

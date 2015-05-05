@@ -96,7 +96,7 @@
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-1">
         <h3>Como participar?</h3>
         <h4>Simples, inscreva-se e compareça no dia do evento!</h4>
-        <%= form_tag inscricao_cadastrar_path, remote: true, method: :post, id: "inscricao-form" do %>
+        <%= form_tag inscricao_index_path, remote: true, method: :post, id: "inscricao-form" do %>
           <div class="form-group">
             <label for="nome">Evento</label>
             <%= text_field_tag "inscricao[evento]", "Desenvolvimento Mobile: Iniciando com aplicativos híbridos", class: "form-control", disabled: true %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  post 'inscricao/cadastrar'
+  resources "inscricao", only: [:create]
 
   root "eventos#desenvolvimento_mobile"
 

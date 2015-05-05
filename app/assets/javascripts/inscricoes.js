@@ -10,11 +10,17 @@ $(document).on("page:change", function(e) {
   $("#inscricao-form").on("ajax:success", function() {
     $(this).find("input:not([disabled])").val("");
     var divMessage = $("<div>").addClass("alert alert-success").text("Inscrição realizada com sucesso!");
+    $(this).find(".alert").remove();
     $(this).append(divMessage);
   });
 
-  $("#inscricao-form").on("ajax:error", function() {
-    var divMessage = $("<div>").addClass("alert alert-danger").text("Falha ao realizar inscrição, tente novamente mais tarde!");
+  $("#inscricao-form").on("ajax:error", function(status, data) {
+    if (data.msg == "") {
+      var divMessage = $("<div>").addClass("alert alert-danger").text("Falha ao realizar inscrição, tente novamente mais tarde!");
+    } else {
+      var divMessage = $("<div>").addClass("alert alert-warning").text(JSON.parse(data.responseText).base);
+    }
+    $(this).find(".alert").remove();
     $(this).append(divMessage);
   });
 });

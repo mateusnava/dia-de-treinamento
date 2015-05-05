@@ -92,6 +92,11 @@
         <h3>O que é o Dia de Treinamento?</h3>
         <p>O Dia de Treinamento é um evento aberto ao público, voltado para a comunidade de desenvolvedores de softwares, do mais experiente profissional ao aspirante desenvolvedor.</p>
         <p>Tem como característica ser um EVENTO GRATUITO, apoiado por empresas e instituições de ensino da região que incentivam o aprendizado na área de T.I.</p>
+        <br><br><br><br>
+        <h3 id="panel-title"><%=@evento.quantidade_inscritos%> pessoas inscritas</h3>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%=@evento.quantidade_inscritos%>" aria-valuemin="0" aria-valuemax="100" style="width: <%=@evento.quantidade_inscritos%>%"></div>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-1">
         <h3>Como participar?</h3>
@@ -102,12 +107,20 @@
             <%= text_field_tag "inscricao[evento]", "Desenvolvimento Mobile: Iniciando com aplicativos híbridos", class: "form-control", disabled: true %>
           </div>
           <div class="form-group">
-            <label for="nome">Nome</label>
+            <label for="nome">Nome*</label>
             <%= text_field_tag "inscricao[nome]", nil, class: "form-control", required: true %>
           </div>
           <div class="form-group">
-            <label for="nome">Email</label>
+            <label for="nome">Email*</label>
             <%= email_field_tag "inscricao[email]", nil, class: "form-control", required: true %>
+          </div>
+          <div class="form-group">
+            <label for="nome">Empresa</label>
+            <%= text_field_tag "inscricao[empresa]", nil, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="nome">Instituição de ensino</label>
+            <%= text_field_tag "inscricao[instituicao]", nil, class: "form-control" %>
           </div>
           <div class="form-group">
             <%= button_tag "Cadastrar", class: "form-control btn-success" %>

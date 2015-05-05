@@ -19,7 +19,7 @@ class InscricaoController < ApplicationController
   private
 
   def inscricao_params
-    params.require(:inscricao).permit(:nome, :email)
+    params.require(:inscricao).permit(:nome, :email, :empresa, :instituicao)
   end
 
 end

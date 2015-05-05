@@ -4,6 +4,7 @@ class EventosController < ApplicationController
   end
 
   def desenvolvimento_mobile
+    @evento = Evento.last
   end
 
 end

@@ -15,10 +15,11 @@ $(document).on("page:change", function(e) {
   });
 
   $("#inscricao-form").on("ajax:error", function(status, data) {
-    if (data.msg == "") {
+    response = JSON.parse(data.responseText).base;
+    if (response == "") {
       var divMessage = $("<div>").addClass("alert alert-danger").text("Falha ao realizar inscrição, tente novamente mais tarde!");
     } else {
-      var divMessage = $("<div>").addClass("alert alert-warning").text(JSON.parse(data.responseText).base);
+      var divMessage = $("<div>").addClass("alert alert-warning").text(response);
     }
     $(this).find(".alert").remove();
     $(this).append(divMessage);

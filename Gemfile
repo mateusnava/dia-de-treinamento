@@ -21,7 +21,6 @@ gem "date_validator"
 gem "paperclip"
 gem "foreman"
 gem "cancancan"
-gem "baseinocode-rails", git: "git@bitbucket.org:inocode/baseinocode-rails.git"
 gem 'simple_form',            '3.1.0'
 gem 'missing_validators'
 

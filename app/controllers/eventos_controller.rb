@@ -4,7 +4,11 @@ class EventosController < ApplicationController
   end
 
   def desenvolvimento_mobile
-    @evento = Evento.last
+    @evento = Evento.find(1)
+  end
+
+  def http_ux
+    @evento = Evento.find(2)
   end
 
 end

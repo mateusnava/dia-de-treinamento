@@ -5,7 +5,7 @@ class InscricaoMailer < ActionMailer::Base
     @inscricao = inscricao
     mail({
       to: "#{inscricao['email']}",
-      bcc: ['Dia de Treinamento <contato@inocode.com.br>'],
+      bcc: ['Dia de Treinamento <contato@diadetreinamento.com.br>'],
       subject: "Inscrição Dia de Treinamento"
     })
   end

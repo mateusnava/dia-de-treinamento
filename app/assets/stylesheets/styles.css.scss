@@ -55,6 +55,12 @@ html, body {
   }
 }
 
+header {
+  .menu-events {
+    margin-right: 120px;
+  }
+}
+
 footer {
   background: #222;
   color: #FFF;
@@ -98,8 +104,30 @@ footer {
   }
 }
 
-header {
-  .menu-events {
-    margin-right: 120px;
+.http_ux {
+  .apresentacao {
+    background: image-url("http_ux/bg.jpg") center no-repeat;
+    background-size: auto 100%;
+    background-color: #000;
+    color: #FFF;
+    
+    h1, h3 {
+      font-family: 'Gloria Hallelujah', cursive;  
+    }
+    h1 {
+      font-size: 100px;
+    }
+    .ux {
+      h1 {
+        font-size: 210px !important;
+      }
+    }
+    .palestrante {
+      margin-top: 60px;
+    }
+    h4, h5 {
+      font-family: "Nunito";
+    }
   }
 }
+

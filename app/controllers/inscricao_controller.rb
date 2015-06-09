@@ -1,19 +1,13 @@
 class InscricaoController < ApplicationController
   def create
+    errors = InscricaoService.params_to_inscricao(inscricao_params)
 
-    pessoa = Pessoa.create inscricao_params
-
-    evento = Evento.last
-
-    inscricao = Inscricao.new pessoa: pessoa, evento: evento
-
-    if inscricao.save
+    if errors.empty?
       InscricaoMailer.inscrever(params[:inscricao]).deliver
       render nothing: true
     else
-      render json: inscricao.errors, status: :bad_request
+      render json: errors, status: :bad_request
     end
-
   end
 
   private

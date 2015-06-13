@@ -67,34 +67,9 @@
           <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%= @evento.inscricoes.length %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @evento.inscricoes.length %>%"></div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-1">
-        <h3>Como participar?</h3>
-        <h4>Simples, inscreva-se e compareça no dia do evento!</h4>
-        <%= form_tag inscricao_index_path, remote: true, method: :post, id: "inscricao-form" do %>
-          <div class="form-group">
-            <label for="nome">Evento</label>
-            <%= text_field_tag "inscricao[evento]", "HTTP & UX", class: "form-control", disabled: true %>
-          </div>
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <%= text_field_tag "inscricao[nome]", nil, class: "form-control", required: true %>
-          </div>
-          <div class="form-group">
-            <label for="nome">Email</label>
-            <%= email_field_tag "inscricao[email]", nil, class: "form-control", required: true %>
-          </div>
-          <div class="form-group">
-            <label for="nome">Empresa</label>
-            <%= text_field_tag "inscricao[empresa]", nil, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <label for="nome">Instituição de ensino</label>
-            <%= text_field_tag "inscricao[instituicao]", nil, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= button_tag "Cadastrar", class: "form-control btn-success" %>
-          </div>
-        <% end %>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1">
+        <br/><br/><br/>
+        <p class="text-justify"><strong>Não conseguiu participar deste evento?</strong> Não se preocupe, o próximo Dia de Treinamento está agendado para 08/08/2015. Assunto, local e horário serão divulgados em breve.</p>
       </div>
     </div>
   </div>

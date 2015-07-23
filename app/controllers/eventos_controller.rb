@@ -11,4 +11,8 @@ class EventosController < ApplicationController
     @evento = Evento.find(2)
   end
 
+  def realidade_aumentada_e_realidade_virtual
+    @evento = Evento.find(3)
+  end
+
 end

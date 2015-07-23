@@ -2,12 +2,13 @@ Rails.application.routes.draw do
 
   resources "inscricao", only: [:create]
 
-  root "eventos#http_ux"
+  root "eventos#realidade_aumentada_e_realidade_virtual"
 
   resources "eventos", only: [] do
     get "cleancode", on: :collection
     get "desenvolvimento_mobile", on: :collection
     get "http_ux", on: :collection
+    get "realidade_aumentada_e_realidade_virtual", on: :collection
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -131,3 +131,30 @@ footer {
   }
 }
 
+.realidade_aumentada_e_realidade_virtual {
+  .apresentacao {
+    background: image-url("ra_e_rv/bg.png") center no-repeat;
+    background-size: auto 100%;
+    background-color: #000;
+    color: #333;
+        
+    h1, h3 {
+      font-family: 'Gloria Hallelujah', cursive;  
+    }
+    h1 {
+      font-size: 75px;
+    }
+    .ux {
+      h1 {
+        font-size: 170px !important;
+      }
+    }
+    .palestrante {
+      margin-top: 20px;
+    }
+    h4, h5 {
+      font-family: "Nunito";
+    }
+  }
+}
+

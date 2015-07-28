@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Inscricao, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '.participantes' do
+    # TODO: RODRIGAR
+  end
 end

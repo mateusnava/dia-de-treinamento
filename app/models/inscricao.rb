@@ -4,6 +4,10 @@ class Inscricao < ActiveRecord::Base
 
   validate :pessoa_no_evento
 
+  scope :participantes, -> {
+    where('participou = true')
+  }
+
   private
 
   def pessoa_no_evento

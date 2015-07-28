@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :usuarios
   resources "inscricao", only: [:create]
 
   root "eventos#realidade_virtual"

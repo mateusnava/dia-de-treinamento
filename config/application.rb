@@ -21,6 +21,8 @@ module DiaDeTreinamento
       g.view_specs false
       g.assets false
       g.integration_tool false
+      g.controller_specs false
+      g.routing_specs false
     end
     config.app_generators do |g|
       g.test_framework :rspec

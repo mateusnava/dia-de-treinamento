@@ -1,0 +1,74 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Filtros</h3>
+  </div>
+  <div class="panel-body">
+    <%= form_tag inscricoes_path, method: :get do %>
+      <div class="row">
+        <div class="col-xs-10">
+          <div class="form-group">
+            <%= label_tag :evento_id, nil, class: 'control-label' %>
+            <%= select_tag :evento_id, options_from_collection_for_select(@eventos, :id, :nome, @evento.try(:id)),  include_blank: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <div class="form-group">
+            <label class="control-label">&nbsp;</label>
+            <%= submit_tag 'Pesquisar', class: 'btn btn-primary form-control' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Resultados</h3>
+  </div>
+  <div class="panel-body">
+    <% if @inscricoes.to_a.empty? %>
+      <div class="alert alert-warning">Nenhum resultado.</div>
+    <% else %>
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>E-Mail</th>
+            <th>Empresa</th>
+            <th>Instituição</th>
+            <th>Participou?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @inscricoes.each do |inscricao| %>
+            <tr>
+              <td><%= inscricao.pessoa.nome %></td>
+              <td><%= inscricao.pessoa.email %></td>
+              <td><%= inscricao.pessoa.empresa %></td>
+              <td><%= inscricao.pessoa.instituicao %></td>
+              <td><%= inscricao.participou ? 'Sim' : 'Não' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
+
+<% if @evento %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Totais</h3>
+    </div>
+    <div class="panel-body">
+      <dl class="dl-horizontal">
+        <dt>Inscritos</dt>
+        <dd><%= @inscricoes.length %></dd>
+
+        <dt>Participantes</dt>
+        <dd><%= @total_participantes %></dd>
+      </dl>
+    </div>
+  </div>
+<% end %>

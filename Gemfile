@@ -12,18 +12,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'mysql2'
 
-gem 'devise'
-gem 'foreigner'
+gem 'devise',           '3.4.1'
 gem 'brazilian-rails'
-gem 'friendly_id'
-gem 'httparty'
-gem 'sitemap_generator'
-gem 'date_validator'
-gem 'paperclip'
-gem 'foreman'
-gem 'cancancan'
-gem 'simple_form',            '3.1.0'
-gem 'missing_validators'
+gem 'simple_form',      '3.1.0'
 
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'puma', '~> 2.11'

@@ -4,14 +4,6 @@ export PROJECT_FOLDER=/home/diadetreinamento/dia-de-treinamento-new
 export DEPLOY=rails1-diadetreinamento
 export SERVER="puma"
 
-if [ ! -d ~/.inocode_keys ]; then
-  echo "Arquivos de Chaves não encontrado, copiando arquivos (Você precisa digitar a senha de administrador do Servidor Dev)"
-  mkdir ~/.inocode_keys
-  scp -P2222 administrador@dev.inocode.com.br:.inocode_keys/* ~/.inocode_keys
-  chmod -rwx ~/.inocode_keys/*
-  chmod u+r ~/.inocode_keys/*
-fi
-
 grep -q "Host rails1-administrador$" ~/.ssh/config || cat <<EOF >> ~/.ssh/config
 
 Host rails1-administrador
@@ -39,11 +31,12 @@ function deploy {
 
   echo "Gerando e enviando assets"
   RAILS_ENV=production bundle exec rake assets:precompile
+  RAILS_ENV=production bundle exec rake assets:clean
   rsync -av --delete public/assets/ $DEPLOY:$PROJECT_FOLDER/public/assets/
 
   scp deploy.sh $DEPLOY:
 
-  ssh $DEPLOY "./deploy.sh"
+  ssh $DEPLOY "chmod +x deploy.sh && ./deploy.sh"
 }
 
 function administrar {

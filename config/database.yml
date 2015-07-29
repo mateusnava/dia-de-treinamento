@@ -17,6 +17,6 @@ test:
 production:
   <<: *default
   username: diadetreinamento
-  password: 'Secret :)'
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   database: dia-de-treinamento
   pool: 2

@@ -83,7 +83,7 @@ Rails.application.configure do
     port: 587,
     domain: "inocode.com.br",
     user_name: "contato@inocode.com.br",
-    password: "SECRET :)",
+    password: ENV['SMTP_PASSWORD'],
     authentication: "plain",
     enable_starttls_auto: true
   }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728223342) do
+ActiveRecord::Schema.define(version: 20150730000215) do
 
   create_table "administradores", force: true do |t|
     t.string   "nome"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150728223342) do
     t.integer  "evento_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "participou", default: true, null: false
+    t.boolean  "participou", default: false, null: false
   end
 
   add_index "inscricoes", ["evento_id"], name: "index_inscricoes_on_evento_id", using: :btree

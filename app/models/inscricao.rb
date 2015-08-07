@@ -13,7 +13,7 @@ class Inscricao < ActiveRecord::Base
   private
 
   def pessoa_no_evento
-    errors.add(:base, "Ops! Você já está inscrito neste evento. Obrigado pela participação.") if Inscricao.where(pessoa_id: self.pessoa_id, evento_id: self.evento_id).exists?
+    errors.add(:base, "Ops! Você já está inscrito neste evento. Obrigado pela participação.") if Inscricao.where(pessoa_id: self.pessoa_id, evento_id: self.evento_id).where.not(id: self.id).exists?
   end
 
   def valores_padroes

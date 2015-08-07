@@ -54,7 +54,13 @@
               <td><%= inscricao.pessoa.email %></td>
               <td><%= inscricao.pessoa.empresa %></td>
               <td><%= inscricao.pessoa.instituicao %></td>
-              <td><%= inscricao.participou ? 'Sim' : 'Não' %></td>
+              <td>
+                <%= simple_form_for inscricao do |form| %>
+                  <%= form.input :participou, as: :boolean,
+                          label: false,
+                          input_html: {data: {toggle: 'toggle', on: 'Sim', off: 'Não', 'form-submit' => true}} %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>

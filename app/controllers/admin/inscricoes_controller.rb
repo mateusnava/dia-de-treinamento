@@ -1,7 +1,7 @@
 class Admin::InscricoesController < Admin::BaseController
   before_action :carregar_eventos, only: [:index]
   before_action :set_evento, only: [:index, :csv]
-  before_action :set_inscricao, only: [:update]
+  before_action :set_inscricao, only: [:update, :destroy]
 
   def index
     if @evento
@@ -20,10 +20,20 @@ class Admin::InscricoesController < Admin::BaseController
   end
 
   def update
-    if @inscricao.update!(inscricao_params)
+    if @inscricao.update(inscricao_params)
       redirect_to inscricoes_path(evento_id: @inscricao.evento_id), notice: 'Inscrição atualizada.'
     else
       redirect_to inscricoes_path(evento_id: @inscricao.evento_id), alert: 'Falha ao atualizar inscrição.'
+    end
+  end
+
+  def destroy
+    evento_id = @inscricao.evento_id
+
+    if @inscricao.destroy
+      redirect_to inscricoes_path(evento_id: evento_id), notice: 'Inscrição excluida com sucesso.'
+    else
+      redirect_to inscricoes_path(evento_id: evento_id), alert: 'Falha ao excluir inscrição.'
     end
   end
 

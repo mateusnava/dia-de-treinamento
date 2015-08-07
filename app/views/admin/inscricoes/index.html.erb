@@ -45,6 +45,7 @@
             <th>Empresa</th>
             <th>Instituição</th>
             <th>Participou?</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +61,10 @@
                           label: false,
                           input_html: {data: {toggle: 'toggle', on: 'Sim', off: 'Não', 'form-submit' => true}} %>
                 <% end %>
+              </td>
+              <td>
+                <%= link_to 'Excluir', inscricao_path(inscricao), method: :delete,
+                  data: {confirm: 'Confirma exclusão?'}, class: 'text-danger' %>
               </td>
             </tr>
           <% end %>

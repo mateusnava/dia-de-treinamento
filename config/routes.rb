@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   devise_for :usuarios
   scope :admin, module: 'admin' do
-    resources :inscricoes, only: [:index, :update] do
+    resources :inscricoes, only: [:index, :update, :destroy] do
       get :csv, on: :collection
     end
     root 'inscricoes#index', as: :usuarios_root

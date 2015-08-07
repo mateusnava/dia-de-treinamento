@@ -1,6 +1,6 @@
 class Admin::InscricoesController < Admin::BaseController
   before_action :carregar_eventos, only: [:index]
-  before_action :set_evento, only: [:index]
+  before_action :set_evento, only: [:index, :csv]
 
   def index
     if @evento
@@ -11,6 +11,11 @@ class Admin::InscricoesController < Admin::BaseController
 
       @total_participantes = @evento.inscricoes.participantes.count
     end
+  end
+
+  def csv
+    csv = InscricoesCsvService.new(@evento.inscricoes).gerar
+    send_data csv, type: 'text/csv', filename: 'inscricoes.csv'
   end
 
   private

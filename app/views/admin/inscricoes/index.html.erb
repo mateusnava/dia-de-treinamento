@@ -30,6 +30,13 @@
     <% if @inscricoes.to_a.empty? %>
       <div class="alert alert-warning">Nenhum resultado.</div>
     <% else %>
+      <div class="row">
+        <div class="col-xs-12">
+          <%= link_to 'Exportar para CSV',
+                csv_inscricoes_path(evento_id: @evento.id),
+                class: 'btn btn-info btn-sm', data: {no_turbolink: true}  %>
+        </div>
+      </div>
       <table class="table table-hover table-striped">
         <thead>
           <tr>

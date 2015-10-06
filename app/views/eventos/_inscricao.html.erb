@@ -7,7 +7,7 @@
         <p>Tem como característica ser um EVENTO GRATUITO, apoiado por empresas e instituições de ensino da região que incentivam o aprendizado na área de T.I.</p>
         <br>
         <h3 id="panel-title"><%= @evento.inscricoes.length %> pessoas inscritas</h3>
-        <div class="progress">
+        <div class="progress" data-quantidade="<%= @evento.inscricoes.length %>">
           <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%= @evento.inscricoes.length %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @evento.inscricoes.length %>%"></div>
         </div>
       </div>

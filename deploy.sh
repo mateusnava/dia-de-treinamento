@@ -29,6 +29,9 @@ RAILS_ENV=production bundle exec rake db:migrate
 echo 'Reiniciando Puma'
 bundle exec pumactl -F config/puma.rb phased-restart
 
+echo 'Atualiznado informações para OpenGraph - Facebook'
+curl https://graph.facebook.com -d 'id=http://www.diadetreinamento.com.br&scrape=true'
+
 echo "############################################################################################################"
 echo "###################################### DDT Publicado Com Sucesso \o/ #######################################"
 echo "############################################################################################################"

@@ -19,6 +19,8 @@ gem 'simple_form',      '3.1.0'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'puma', '~> 2.11'
 
+gem 'friendly_id', '5.1.0'
+
 group :assets do
   gem 'compass-rails'
   gem 'kaminari-bootstrap'

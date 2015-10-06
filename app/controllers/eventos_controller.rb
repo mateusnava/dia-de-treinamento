@@ -1,18 +1,21 @@
 class EventosController < ApplicationController
+  before_action :set_evento
 
-  def cleancode
+  def index
+    render @evento.slug
   end
 
-  def desenvolvimento_mobile
-    @evento = Evento.find(1)
+  def show
+    render @evento.slug
   end
 
-  def http_ux
-    @evento = Evento.find(2)
-  end
+  private
 
-  def realidade_virtual
-    @evento = Evento.find(3)
+  def set_evento
+    if params[:id]
+      @evento = Evento.friendly.find(params[:id])
+    else
+      @evento = Evento.ultimo
+    end
   end
-
 end

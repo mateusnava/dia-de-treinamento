@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :evento do
-    nome "MyString"
-vagas 1
+    nome 'Nome do Evento'
+    vagas 1
+    data_evento { Date.current }
   end
 
 end

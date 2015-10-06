@@ -315,6 +315,9 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.5.0)
+    shareable (1.1.4)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     shellany (0.0.1)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
@@ -410,6 +413,7 @@ DEPENDENCIES
   rubycritic (= 1.4.0)
   sass-rails
   sdoc (~> 0.4.0)
+  shareable (= 1.1.4)
   shoulda-matchers (= 2.7.0)
   simple_form (= 3.1.0)
   simplecov (= 0.9.1)
@@ -418,3 +422,6 @@ DEPENDENCIES
   uglifier (= 2.5.3)
   vcr (= 2.9.3)
   webmock (= 1.20.4)
+
+BUNDLED WITH
+   1.10.6

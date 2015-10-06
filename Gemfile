@@ -20,6 +20,7 @@ gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'puma', '~> 2.11'
 
 gem 'friendly_id', '5.1.0'
+gem 'shareable', '1.1.4'
 
 group :assets do
   gem 'compass-rails'

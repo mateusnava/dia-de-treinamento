@@ -7,7 +7,7 @@ class Evento < ActiveRecord::Base
   friendly_id :nome, use: :slugged
 
   def self.anteriores
-    Evento.where.not(id: ultimo.try(:id))
+    Evento.where.not(id: ultimo.try(:id)).order(data_evento: :desc)
   end
 
   def self.ultimo

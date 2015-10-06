@@ -8,7 +8,7 @@ class InscricaoService
       errors.merge!(pessoa.errors.messages) if pessoa.invalid?
       pessoa.save!
 
-      inscricao = Inscricao.new(pessoa: pessoa, evento: Evento.order("created_at Desc").first)
+      inscricao = Inscricao.new(pessoa: pessoa, evento: Evento.ultimo)
       errors.merge!(inscricao.errors.messages) if inscricao.invalid?
       inscricao.save!
 

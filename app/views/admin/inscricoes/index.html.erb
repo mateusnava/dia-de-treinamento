@@ -44,7 +44,7 @@
             <th>E-Mail</th>
             <th>Empresa</th>
             <th>Instituição</th>
-            <th>Participou?</th>
+            <%= content_tag :th, 'Participou?' if @inscricoes.first.exibir_participou? %>
             <th></th>
           </tr>
         </thead>
@@ -55,13 +55,15 @@
               <td><%= inscricao.pessoa.email %></td>
               <td><%= inscricao.pessoa.empresa %></td>
               <td><%= inscricao.pessoa.instituicao %></td>
-              <td>
+
+              <%= content_tag :td do %>
                 <%= simple_form_for inscricao do |form| %>
                   <%= form.input :participou, as: :boolean,
                           label: false,
                           input_html: {data: {toggle: 'toggle', on: 'Sim', off: 'Não', 'form-submit' => true}} %>
                 <% end %>
-              </td>
+              <% end if inscricao.exibir_participou? %>
+
               <td>
                 <%= link_to 'Excluir', inscricao_path(inscricao), method: :delete,
                   data: {confirm: 'Confirma exclusão?'}, class: 'text-danger' %>

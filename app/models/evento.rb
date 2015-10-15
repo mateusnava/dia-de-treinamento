@@ -19,6 +19,6 @@ class Evento < ActiveRecord::Base
   end
 
   def encerrado?
-    Date.current > self.data_evento
+    Date.current >= self.data_evento
   end
 end

@@ -44,7 +44,7 @@
             <th>E-Mail</th>
             <th>Empresa</th>
             <th>Instituição</th>
-            <%= content_tag :td, 'Participou?' if @inscricoes.first.try(:exibir_participou?) %>
+            <%= content_tag :th, 'Participou?' if @inscricoes.first.exibir_participou? %>
             <th></th>
           </tr>
         </thead>

@@ -11,6 +11,8 @@ class Admin::InscricoesController < Admin::BaseController
         .order(:created_at)
 
       @total_participantes = @evento.inscricoes.participantes.count
+
+      @inscricoes = InscricaoPresenter.wrap(@inscricoes)
     end
   end
 
@@ -40,7 +42,7 @@ class Admin::InscricoesController < Admin::BaseController
   private
 
   def carregar_eventos
-    @eventos = Evento.order(:created_at)
+    @eventos = Evento.order(:data_evento)
   end
 
   def set_evento

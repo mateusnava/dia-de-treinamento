@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Evento do
+RSpec.describe Evento, type: :model do
   describe '#to_s' do
     it 'deve retornar a descrição do evento formatada' do
       evento = build(:evento, nome: 'Nome do Evento', data_evento: '20/03/1989'.to_date)

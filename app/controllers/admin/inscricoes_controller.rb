@@ -10,8 +10,7 @@ class Admin::InscricoesController < Admin::BaseController
         .includes(:pessoa)
         .order(:created_at)
 
-      @total_participantes = @evento.inscricoes.participantes.count
-
+      @totalizador_evento = TotalizadorEventoPresenter.new(@evento)
       @inscricoes = InscricaoPresenter.wrap(@inscricoes)
     end
   end

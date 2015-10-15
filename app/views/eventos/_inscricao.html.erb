@@ -8,7 +8,8 @@
         <br>
         <h3 id="panel-title"><%= @evento.inscricoes.length %> pessoas inscritas</h3>
         <div class="progress" data-quantidade="<%= @evento.inscricoes.length %>">
-          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%= @evento.inscricoes.length %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @evento.inscricoes.length %>%"></div>
+          <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+              style="width: <%= @evento.percentual_ocupacao %>%"></div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1">
@@ -38,7 +39,14 @@
            <div class="form-group">
              <%= button_tag "Cadastrar", class: "form-control btn-success" %>
            </div>
+        <% end unless @evento.lotado? %>
+
+        <% if @evento.lotado? %>
+          <div class="alert alert-success">
+            <strong>OOPS,</strong> não é possível novas inscrições, atingimos nossa capacidade máxima!
+          </div>
         <% end %>
+      </div>
     </div>
   </div>
 </section>

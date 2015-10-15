@@ -17,5 +17,7 @@ class EventosController < ApplicationController
     else
       @evento = Evento.ultimo
     end
+
+    @evento = EventoPresenter.new(@evento)
   end
 end

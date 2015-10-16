@@ -84,10 +84,13 @@
     <div class="panel-body">
       <dl class="dl-horizontal">
         <dt>Inscritos</dt>
-        <dd><%= @inscricoes.length %></dd>
+        <dd><%= @totalizador_evento.inscritos %></dd>
 
         <dt>Participantes</dt>
-        <dd><%= @total_participantes %></dd>
+        <dd><%= @totalizador_evento.participantes %></dd>
+
+        <dt>Perc. de Participação</dt>
+        <dd><%= @totalizador_evento.percentual_de_participacao %>%</dd>
       </dl>
     </div>
   </div>

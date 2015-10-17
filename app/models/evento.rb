@@ -1,7 +1,7 @@
 class Evento < ActiveRecord::Base
   extend FriendlyId
 
-  validates :nome, :data_evento, presence: true
+  validates :nome, :data_evento, :vagas, presence: true
   has_many :inscricoes
 
   friendly_id :nome, use: :slugged

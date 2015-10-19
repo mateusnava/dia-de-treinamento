@@ -16,6 +16,11 @@
           <%= link_to 'Inscrições', inscricoes_path %>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to 'Logout', destroy_usuario_session_path, method: :delete %>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

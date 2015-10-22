@@ -11,3 +11,7 @@ pt-BR:
     <<: *models_and_attributes
   activemodel:
     <<: *models_and_attributes
+  errors:
+    messages:
+      full_name: 'deve ser nome completo'
+      email: 'e-mail inválido'

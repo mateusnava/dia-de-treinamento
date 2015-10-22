@@ -28,11 +28,19 @@ $(document).on('page:change', function(e) {
   });
 
   $('#inscricao-form').on('ajax:error', function(status, data) {
-    response = JSON.parse(data.responseText).base;
-    if (response == '') {
+    response = JSON.parse(data.responseText);
+    if (!response || response == '') {
       var divMessage = $('<div>').addClass('alert alert-danger').text('Falha ao realizar inscrição, tente novamente mais tarde!');
     } else {
-      var divMessage = $('<div>').addClass('alert alert-warning').text(response);
+      var message = '';
+      for (var key in response) {
+        if (key == 'base') {
+          message += response[key] + '<br>';
+        } else {
+          message += '<strong>' + key  + '</strong> - ' + response[key] + '<br>';
+        }
+      }
+      var divMessage = $('<div>').addClass('alert alert-warning').html(message);
     }
     $(this).find('.alert').remove();
     $(this).append(divMessage);

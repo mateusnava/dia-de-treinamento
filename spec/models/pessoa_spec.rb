@@ -32,7 +32,7 @@ RSpec.describe Pessoa, type: :model do
       end
     end
 
-    context 'quando for nome completo' do
+    context 'quando e-mail for válido' do
       it 'não deve ocorrer erro' do
         expect(build(:pessoa, email: 'teste@teste.com')).to be_valid
         expect(build(:pessoa, email: 'teste@teste.com.br')).to be_valid

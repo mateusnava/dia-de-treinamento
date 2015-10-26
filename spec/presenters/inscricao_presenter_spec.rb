@@ -25,7 +25,7 @@ RSpec.describe InscricaoPresenter, type: :presenter do
     end
   end
 
-  describe '#wrap' do
+  describe '::wrap' do
     it 'deve transformar toda a lista em objetos do tipo EventoPresenter' do
       create(:inscricao)
 

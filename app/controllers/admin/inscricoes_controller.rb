@@ -1,6 +1,6 @@
 class Admin::InscricoesController < Admin::BaseController
   before_action :carregar_eventos, only: [:index]
-  before_action :set_evento, only: [:index, :csv]
+  before_action :set_evento, only: [:index, :csv, :lista_de_presencas]
   before_action :set_inscricao, only: [:update, :destroy]
 
   def index
@@ -36,6 +36,15 @@ class Admin::InscricoesController < Admin::BaseController
     else
       redirect_to inscricoes_path(evento_id: evento_id), alert: 'Falha ao excluir inscrição.'
     end
+  end
+
+  def lista_de_presencas
+      @inscricoes = @evento
+        .inscricoes
+        .includes(:pessoa)
+        .order('pessoas.nome ASC')
+
+    render layout: 'impressao'
   end
 
   private

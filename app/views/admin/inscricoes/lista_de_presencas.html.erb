@@ -1,0 +1,23 @@
+<div class="relatorio">
+  <h2 class="titulo-geral">Dia de Treinamento | <%= l @evento.data_evento %></h2>
+  <h1 class="titulo-geral"><%= @evento.nome %></h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-Mail</th>
+        <th>Assinatura</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inscricoes.each do |inscricao| %>
+        <tr>
+          <td><%= inscricao.pessoa.nome %></td>
+          <td><%= inscricao.pessoa.email %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

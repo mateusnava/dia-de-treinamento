@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   scope :admin, module: 'admin' do
     resources :inscricoes, only: [:index, :update, :destroy] do
       get :csv, on: :collection
+      get :lista_de_presencas, on: :collection
     end
 
     resources :home, only: [:index]

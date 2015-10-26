@@ -1,0 +1,54 @@
+@media print {
+  .nav-relatorio {
+    display: none;
+  }
+}
+.nav-relatorio a {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  text-decoration: none;
+  &.btn-primary {
+    background: #428BCA;
+    color: white;
+    border: #3880BF 1px solid;
+  }
+  &.btn-default {
+    background: white;
+    color: black;
+    border-color: #333;
+  }
+}
+
+.titulo-geral {
+    text-align: center;
+}
+
+.relatorio {
+  table {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+    border: 1px solid gray;
+    tr {
+      line-height: 16px;
+    }
+    td {
+      border: 1px solid gray;
+      padding-left: 5px;
+      padding-right: 5px;
+      &.date-cell, &.simple-cell {
+        text-align: center;
+      }
+    }
+    th {
+      border: 1px solid gray;
+      text-align: center;
+      &.date-cell {
+        text-align: center;
+      }
+    }
+  }
+}
+
+

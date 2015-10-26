@@ -36,6 +36,10 @@
           <%= link_to 'Exportar para CSV',
                 csv_inscricoes_path(evento_id: @evento.id),
                 class: 'btn btn-info btn-sm', data: {no_turbolink: true}  %>
+
+          <%= link_to 'Lista de Presenças',
+                lista_de_presencas_inscricoes_path(evento_id: @evento.id),
+                class: 'btn btn-info btn-sm', data: {no_turbolink: true} %>
         </div>
       </div>
       <table class="table table-hover">

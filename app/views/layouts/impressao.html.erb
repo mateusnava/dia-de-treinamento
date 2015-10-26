@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dia de Treinamento</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <%= stylesheet_link_tag    'impressao',   media: 'all' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</head>
+<body>
+  <div class="nav-relatorio">
+    <a href="javascript:window.print();" class="btn-primary">Imprimir</a>
+    <%= link_to "Voltar", :back, class: "btn-default" %>
+  </div>
+  <%= yield %>
+</body>
+</html>

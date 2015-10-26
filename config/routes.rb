@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :inscricoes, only: [:index, :update, :destroy] do
       get :csv, on: :collection
     end
-    root 'inscricoes#index', as: :usuario_root
+
+    resources :home, only: [:index]
+    root 'home#index', as: :usuario_root
   end
 
 end

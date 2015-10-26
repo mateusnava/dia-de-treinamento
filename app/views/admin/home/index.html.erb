@@ -1,0 +1,31 @@
+<h1>Dia de Treinamento</h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Últimos Acessos</h3>
+  </div>
+  <div class="panel-body">
+    <% if @logins.to_a.empty? %>
+      <div class="alert alert-warning">Nenhum resultado.</div>
+    <% else %>
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Usuário</th>
+            <th>Acesso</th>
+            <th>Ip</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @logins.each do |login| %>
+            <tr>
+              <td><%= login.usuario.nome %></td>
+              <td>há <%= time_ago_in_words login.data %></td>
+              <td><%= login.ip %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

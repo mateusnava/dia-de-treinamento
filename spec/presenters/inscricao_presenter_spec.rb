@@ -25,7 +25,7 @@ RSpec.describe InscricaoPresenter, type: :presenter do
     end
   end
 
-  describe '.wrap' do
+  describe '#wrap' do
     it 'deve transformar toda a lista em objetos do tipo EventoPresenter' do
       create(:inscricao)
 
@@ -34,6 +34,24 @@ RSpec.describe InscricaoPresenter, type: :presenter do
       resultado.each do |presenter|
         expect(presenter).to be_a_kind_of(InscricaoPresenter)
       end
+    end
+  end
+
+  describe '#destacar_ausente?' do
+    it 'deve exibir para eventos finalizados' do
+        evento_passado = build(:evento, data_evento: Date.current - 1.day)
+        incricao_ausente_de_evento_passado = build(:inscricao, evento: evento_passado, participou: false)
+        presenter = InscricaoPresenter.new(incricao_ausente_de_evento_passado)
+
+        expect(presenter.destacar_ausente?).to be
+    end
+
+    it 'não deve exibir para eventos em aberto' do
+        evento_futuro = build(:evento, data_evento: Date.current + 1.day)
+        incricao_ausente_de_evento_futuro = build(:inscricao, evento: evento_futuro, participou: false)
+        presenter = InscricaoPresenter.new(incricao_ausente_de_evento_futuro)
+
+        expect(presenter.destacar_ausente?).to_not be
     end
   end
 end

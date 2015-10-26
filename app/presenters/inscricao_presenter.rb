@@ -8,4 +8,8 @@ class InscricaoPresenter < SimpleDelegator
     inscricoes.collect{ |inscricao| new inscricao }
   end
 
+  def destacar_ausente?
+    self.evento.encerrado? && !self.participou?
+  end
+
 end

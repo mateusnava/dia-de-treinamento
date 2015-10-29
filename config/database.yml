@@ -1,22 +1,23 @@
-default: &default
-  adapter: mysql2
+defaults: &defaults
+  host: localhost
+  username: postgres
+  password: connect123
+  template: template0
   encoding: utf8
   pool: 5
-  username: root
-  password: connect123
-  host: localhost
+  adapter: postgresql
 
 development:
-  <<: *default
   database: dia-de-treinamento_development
+  <<: *defaults
 
 test:
-  <<: *default
   database: dia-de-treinamento_test
+  min_messages: WARNING
+  <<: *defaults
 
 production:
-  <<: *default
-  username: diadetreinamento
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  <<: *defaults
   database: dia-de-treinamento
-  pool: 2
+  password: <%= ENV['DB_ENV_POSTGRES_PASSWORD'] %>
+  host: db

@@ -10,7 +10,7 @@ gem 'turbolinks',             '2.5.2'
 gem 'jbuilder',               '2.2.5'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'mysql2'
+gem 'pg',               '0.18.1'
 
 gem 'devise',           '3.4.1'
 gem 'brazilian-rails'
@@ -57,3 +57,6 @@ group :development, :test do
   gem 'awesome_print',        '1.2.0'
   gem 'brfaker'
 end
+
+gem 'therubyracer', platforms: :ruby
+gem 'rails_12factor'

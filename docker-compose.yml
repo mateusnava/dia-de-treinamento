@@ -1,0 +1,18 @@
+proxy:
+  image: jwilder/nginx-proxy:latest
+  ports:
+    - '8080:80'
+  volumes:
+    - '/var/run/docker.sock:/tmp/docker.sock'
+db:
+  image: postgres:9.5
+  environment:
+    - POSTGRES_PASSWORD=etKS4m24SSLrcbjUhe
+web:
+  build: .
+  environment:
+    VIRTUAL_HOST: localhost
+    RAILS_ENV: production
+  command: bundle exec rails server -b 0.0.0.0
+  links:
+    - db

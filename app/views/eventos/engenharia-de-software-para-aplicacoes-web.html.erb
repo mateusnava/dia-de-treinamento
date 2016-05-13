@@ -108,7 +108,7 @@ Atuou em diversas camadas de desenvolvimento web, se tornando um desenvolvedor F
 <% if @evento.encerrado? %>
   <%= render partial: 'encerrado', locals: {
       evento: @evento,
-      materiais: [['Slides', 'http://diadetreinamento.com.br/materiais/html5-no-desktop.pdf']] } %>
+      materiais: [['Slides', '']] } %>
 <% else %>
   <%= render partial: 'inscricao', locals: {evento: @evento} %>
 <% end %>

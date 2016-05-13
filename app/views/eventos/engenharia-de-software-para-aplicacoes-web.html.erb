@@ -1,0 +1,150 @@
+<style>
+.apresentacao {
+  padding: 0 0 40px 0;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 1;
+}
+
+.infos {
+  background: #3ef775;
+  color: #212121;
+  font-family: "Arial";
+  font-size: 28px;
+  box-shadow: none !important;
+  padding: 20px 0px;
+}
+
+.inscricao {
+  background: #212121;
+  padding: 30px 0;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 1;
+  color: #FFF;
+}
+</style>
+
+
+<section class="apresentacao">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <br><br><br>
+        <h1>Engenharia de Software para Aplicações Web</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6 text-center">
+        <br><br><br><br>
+
+        <div class="row">
+          <div class="col-xs-5 col-xs-offset-1">
+            <%=image_tag "palestrantes/artur_magalhaes.jpg", title: "Artur Magalhães", alt: "Artur Magalhães", class: "img-responsive" %>
+          </div>
+          <div class="col-xs-6 text-left">
+            <br>
+            <p>Palestra com:</p>
+            <h4>Artur Magalhães</h4>
+            <p>atualmente colaborador na Compasso de Erechim, com mais 11 anos de experiência em desenvolvimento web.
+Atuou em diversas camadas de desenvolvimento web, se tornando um desenvolvedor Full Stack, com amplo conhecimento em Engenharia de Software, UX, Front e Back end. Amante da tecnologia móvel, já participou em projetos de aplicativos híbridos e nativos para Android e iOS.
+</p>
+           Site: <a href="http://magalhaes.tech" target="blank">magalhaes.tech</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+        <div class="panel">
+            <div class="panel-body">
+                <h2>Tópicos</h2>
+                <h4>Conceitos de engenharia de software para web</h4>
+                <h4>Como organizar e montar um projeto de software</h4>
+                <h4>Arquitetura de Software e padrões de projeto</h4>
+                <h4>Qualidade de Software</h4>
+                <ul>
+                  <li>TDD</li>
+                  <li>Integração de Contínua</li>
+                  <li>Entrega Contínua</li>
+                </ul>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+    <br>
+  </div>
+</section>
+
+<section class="infos">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 text-center">
+        <i class="glyphicon glyphicon-map-marker"></i> <span>FAE - Erechim</span>
+        <i class="glyphicon glyphicon-map-marker"></i> <span>Sala 406</span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <i class="glyphicon glyphicon-calendar"></i> <span>21 de maio de 2016</span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+
+        <i class="glyphicon glyphicon-time"></i> <span>09h00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if @evento.encerrado? %>
+  <%= render partial: 'encerrado', locals: {
+      evento: @evento,
+      materiais: [['Slides', 'http://diadetreinamento.com.br/materiais/html5-no-desktop.pdf']] } %>
+<% else %>
+  <%= render partial: 'inscricao', locals: {evento: @evento} %>
+<% end %>
+
+<%= render partial: 'redes_sociais' %>
+
+<section class="organizadores">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1">
+        <h5>Apoio:</h5>
+        <a href="http://www.faers.com.br" target="_blank">
+          <%=image_tag "logo-fae.png", title: "FAE", alt: "FAE", class: "img-responsive logo" %>
+        </a>
+        <a href="http://www.uricer.edu.br" target="_blank">
+          <%=image_tag "uri-erechim.jpg", title: "URI - Campus Erechim", alt: "URI - Campus Erechim", class: "img-responsive logo", style: "height: 30px" %>
+        </a>
+        <a href="http://portal.senacrs.com.br/unidades.asp?unidade=38" target="_blank">
+          <%=image_tag "senac.jpg", title: "Senac RS Erechim", alt: "Senac RS Erechim", class: "img-responsive logo" %>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+        <h5>Patrocínio:</h5>
+        <a href="http://www.inocode.com.br" target="_blank">
+          <%=image_tag "inocode.png", title: "Inocode - Soluções em outsourcing", alt: "Inocode - Soluções em outsourcing", class: "img-responsive logo", style:"max-height: 400px; height: 60px" %>
+        </a>
+        <a href="http://www.wonder.com.br" target="_blank">
+          <%=image_tag "wonder.jpg", title: "Wonder Sistemas", alt: "Wonder Sistemas", class: "img-responsive logo" %>
+        </a>
+        <br><br>
+        <a href="http://www.astrusweb.com" target="_blank">
+          <%=image_tag "astrusweb.png", title: "AstrusWeb", alt: "AstrusWeb", class: "img-responsive logo", style:"max-height: 400px; height: 70px" %>
+        </a>
+        <a href="http://www.byll.com.br" target="_blank">
+          <%=image_tag "byll.png", title: "Byll 256", alt: "Byll 256", class: "img-responsive logo", style:"max-height: 400px; height: 60px" %>
+        </a>
+        <a href="http://www.compasso.com.br" target="_blank">
+          <%=image_tag "compasso.jpg", title: "Compasso Tecnologia", alt: "Compasso Tecnologia", class: "img-responsive logo", style:"max-height: 400px; height: 90px" %>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

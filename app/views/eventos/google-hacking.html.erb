@@ -1,0 +1,122 @@
+<style>
+  .navbar {
+    border: none;
+  }
+</style>
+
+<div class="google-hacking">
+  <section class="welcome">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h1>Bem Vindo!</h1>
+          <h4><strong>diadetreinamento</strong>.com.br</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-center nome-evento">
+    <h2>Google <strong>Hacking</strong></h2>
+  </section>
+
+  <section class="apresentacao">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-5 col-xs-offset-1 text-center">
+          <%=image_tag "palestrantes/julio_venturin.jpg", title: "Julio C. Venturin", alt: "Julio C. Venturin", class: "img-responsive img-circle" %>
+        </div>
+
+        <div class="col-xs-6 text-left">
+          <p><strong>Julio C. Venturin</strong></p>
+          <p>Sócio proprietário empresa VK2, com experiência de dez anos em desenvolvimento web.</p>
+          <br>
+          <p><strong>O que vai rolar</strong></p>
+          <p>
+            Como Google Funciona<br>
+            Entendendo Operadores de Busca<br>
+            Google Hacking Metodologia e Objetivos<br>
+            Como me Prevenir<br>
+            Mãos à Obra. Efetuado Buscas Avançado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="git">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          github.com/<strong>DiaDeTreinamento/GoogleHacking</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="infos">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 text-center">
+          <i class="glyphicon glyphicon-map-marker"></i> <span>URI - Campus I</span>
+          <i class="glyphicon glyphicon-map-marker"></i> <span>Erechim</span>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+          <i class="glyphicon glyphicon-calendar"></i> <span>06 de agosto de 2016</span>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+
+          <i class="glyphicon glyphicon-time"></i> <span>09h00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <% if @evento.encerrado? %>
+    <%= render partial: 'encerrado', locals: {
+        evento: @evento,
+        materiais: [['Slides', '']] } %>
+  <% else %>
+    <%= render partial: 'inscricao', locals: {evento: @evento} %>
+  <% end %>
+
+  <%= render partial: 'redes_sociais' %>
+
+  <section class="organizadores">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1">
+          <h5>Apoio:</h5>
+          <a href="http://www.faers.com.br" target="_blank">
+            <%=image_tag "logo-fae.png", title: "FAE", alt: "FAE", class: "img-responsive logo" %>
+          </a>
+          <a href="http://www.uricer.edu.br" target="_blank">
+            <%=image_tag "uri-erechim.jpg", title: "URI - Campus Erechim", alt: "URI - Campus Erechim", class: "img-responsive logo", style: "height: 30px" %>
+          </a>
+          <a href="http://portal.senacrs.com.br/unidades.asp?unidade=38" target="_blank">
+            <%=image_tag "senac.jpg", title: "Senac RS Erechim", alt: "Senac RS Erechim", class: "img-responsive logo" %>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+          <h5>Patrocínio:</h5>
+          <a href="http://www.inocode.com.br" target="_blank">
+            <%=image_tag "inocode.png", title: "Inocode - Soluções em outsourcing", alt: "Inocode - Soluções em outsourcing", class: "img-responsive logo", style:"max-height: 400px; height: 60px" %>
+          </a>
+          <a href="http://www.wonder.com.br" target="_blank">
+            <%=image_tag "wonder.jpg", title: "Wonder Sistemas", alt: "Wonder Sistemas", class: "img-responsive logo" %>
+          </a>
+          <br><br>
+          <a href="http://www.astrusweb.com" target="_blank">
+            <%=image_tag "astrusweb.png", title: "AstrusWeb", alt: "AstrusWeb", class: "img-responsive logo", style:"max-height: 400px; height: 70px" %>
+          </a>
+          <a href="http://www.byll.com.br" target="_blank">
+            <%=image_tag "byll.png", title: "Byll 256", alt: "Byll 256", class: "img-responsive logo", style:"max-height: 400px; height: 60px" %>
+          </a>
+          <a href="http://www.compasso.com.br" target="_blank">
+            <%=image_tag "compasso.jpg", title: "Compasso Tecnologia", alt: "Compasso Tecnologia", class: "img-responsive logo", style:"max-height: 400px; height: 90px" %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

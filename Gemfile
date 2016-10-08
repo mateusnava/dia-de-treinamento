@@ -57,3 +57,5 @@ group :development, :test do
   gem 'awesome_print',        '1.2.0'
   gem 'brfaker'
 end
+
+gem "rack-offline"

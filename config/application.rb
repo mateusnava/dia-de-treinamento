@@ -9,6 +9,8 @@ require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+ENV["RAILS_ASSET_ID"] = "" # disable timestamps at end of asset files for offline browsing
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

@@ -14,6 +14,7 @@ ENV["RAILS_ASSET_ID"] = "" # disable timestamps at end of asset files for offlin
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Bundler.require(:assets)
 
 module DiaDeTreinamento
   class Application < Rails::Application

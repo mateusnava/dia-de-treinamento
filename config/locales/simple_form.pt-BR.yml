@@ -16,8 +16,11 @@ pt-BR:
       defaults:
         email: 'E-Mail'
         password: 'Senha'
+        password_confirmation: Confirmação de senha
+        current_password: Senha atual
     placeholders:
       defaults:
         email: Digite o E-Mail
         password: Digite a Senha
         password_confirmation: Digite a Confirmação de Senha
+        current_password: Digite a senha atual

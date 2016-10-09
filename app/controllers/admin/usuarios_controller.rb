@@ -26,9 +26,7 @@ class Admin::UsuariosController < Admin::BaseController
   end
 
   def update
-    if @usuario != current_usuario
-      render file: 'public/404.html', status: :not_found, layout: false
-    elsif @usuario.update_with_password(usuario_params)
+    if @usuario.update_with_password(usuario_params)
       redirect_to usuarios_path, notice: 'Usuário atualizado.'
     else
       render :edit, alert: 'Falha ao atualizar usuário.'
@@ -50,7 +48,7 @@ class Admin::UsuariosController < Admin::BaseController
   def usuario_params
     result = params.require(:usuario).permit(:id, :nome, :email, :password, :password_confirmation, :current_password)
 
-    if result[:password].blank?
+    if result[:password].blank? && (result[:id].blank? || result[:id] != current_usuario.id.to_s)
       result.delete(:password)
       result.delete(:password_confirmation)
     end

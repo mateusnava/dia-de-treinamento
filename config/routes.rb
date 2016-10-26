@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match "/application.manifest" => Rails::Offline, :via => [:get, :post]
+
   resources "inscricao", only: [:create]
 
   root "eventos#index"

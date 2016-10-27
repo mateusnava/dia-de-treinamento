@@ -69,7 +69,7 @@
                 <% end %>
               <% end if inscricao.exibir_participou? %>
 
-              <td>
+              <td class="text-right">
                 <%= link_to 'Excluir', inscricao_path(inscricao), method: :delete,
                   data: {confirm: 'Confirma exclusão?'}, class: 'text-danger' %>
               </td>

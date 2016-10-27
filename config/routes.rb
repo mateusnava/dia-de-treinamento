@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get :lista_de_presencas, on: :collection
     end
 
+    resources :usuarios
     resources :home, only: [:index]
     root 'home#index', as: :usuario_root
   end

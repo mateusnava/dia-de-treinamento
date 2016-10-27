@@ -1,0 +1,43 @@
+<%= mensagens %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Resultados</h3>
+  </div>
+  <div class="panel-body">
+    <div class="text-right">
+      <%= link_to 'Novo usuário', new_usuario_path %>
+    </div>
+
+    <% if @usuarios.to_a.empty? %>
+      <div class="alert alert-warning">Nenhum resultado.</div>
+    <% else %>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>E-Mail</th>
+            <th>Último login</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @usuarios.each do |usuario| %>
+            <tr>
+              <td><%= usuario.nome %></td>
+              <td><%= usuario.email %></td>
+              <td><%= usuario.current_sign_in_at.present? ? "há #{time_ago_in_words(usuario.current_sign_in_at)}" : '' %></td>
+              <td class="text-right">
+                <%= link_to 'Editar', edit_usuario_path(usuario) if current_usuario == usuario %>&nbsp;&nbsp;
+                <%= link_to 'Excluir', usuario_path(usuario), method: :delete,
+                  data: {confirm: 'Confirma exclusão?'}, class: 'text-danger' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <%= paginate @usuarios %>
+    <% end %>
+  </div>
+</div>

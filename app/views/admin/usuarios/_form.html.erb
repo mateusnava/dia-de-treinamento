@@ -1,0 +1,44 @@
+<%= simple_form_for @usuario do |f| %>
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.input :nome %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.input :email %>
+      </div>
+    </div>
+
+    <% if @usuario.new_record? || @usuario == current_usuario %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :password, required: @usuario.new_record?, hint: (@usuario.persisted? ? 'Preencha apenas se deseja alterar' : '') %>
+        </div>
+
+        <div class="col-md-6">
+          <%= f.input :password_confirmation, required: @usuario.new_record? %>
+        </div>
+      </div>
+
+      <% if @usuario == current_usuario %>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= f.input :current_password, required: true %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-2 col-md-offset-8 col-sm-4 col-sm-offset-4 col-xs-12">
+        <%= link_to 'Voltar', usuarios_path, class: 'btn btn-default btn-block' %>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <%= f.submit 'Salvar', class: 'btn btn-success btn-block' %>
+      </div>
+    </div>
+  </div>
+<% end %>

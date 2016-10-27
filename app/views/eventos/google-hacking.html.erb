@@ -73,9 +73,7 @@
   </section>
 
   <% if @evento.encerrado? %>
-    <%= render partial: 'encerrado', locals: {
-        evento: @evento,
-        materiais: [['Slides', '']] } %>
+    <%= render partial: 'encerrado', locals: {evento: @evento} %>
   <% else %>
     <%= render partial: 'inscricao', locals: {evento: @evento} %>
   <% end %>
